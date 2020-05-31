@@ -1,5 +1,18 @@
-<div class="title">
+<div class="container">
   {{title}}
+  <div class="row">
+    <div class="col-sm-8">
+      <input type="text" class="form-control" [(ngModel)]="rechercheYoutube"/>
+    </div>
+    <div class="col-sm-4">
+      <button class="btn-dark" (click)="rechercheVideo()">Recherche vidéo</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-3 cadre" *ngFor="let item of youtubeItem.items">
+      <app-youtube-item [image]="item.snippet.thumbnails.default.url"></app-youtube-item>
+    </div>
+  </div>
 </div>
 
 
